@@ -120,6 +120,8 @@ def get_last_chain_block():
 ################
 
 def write_points(points):
+    if len(points) == 0:
+        return
     if WRITE_INFLUX:
         write_points_influx_line(points)
     if WRITE_POSTGRE:
